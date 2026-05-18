@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <meta name="description" content="GC-Company: Dueños de FINKI, Wallet Giko, NOVA y TOKTOK. Creamos soluciones digitales de alto impacto, webs, apps, sistemas empresariales e instalaciones tecnológicas.">
+    <title>GC-COMPANY | Innovación digital & ecosistema de apps</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #0a0a0a;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+
+        /* === FONDO EMPRESARIAL ELEGANTE === */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(59,130,246,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59,130,246,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(255,255,240,0.03) 0%, rgba(0,0,0,0.01) 100%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Gradiente corporativo sutil en el fondo general */
+        .bg-corporate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(125deg, #fdfdfd 0%, #f5f9ff 100%);
+            z-index: -3;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --accent-glow: #2563eb;
+            --grad-1: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --card-shadow: 0 20px 35px -12px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.02);
+            --hover-shadow: 0 30px 40px -18px rgba(0,0,0,0.15);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ---------- NAVBAR MODERNA + HAMBURGUESA RESPONSIVE ---------- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(16px);
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            border-bottom: 1px solid var(--gray-200);
+            padding: 0.7rem 0;
+            transition: all 0.2s;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h2 {
+            font-size: clamp(1.3rem, 5vw, 1.9rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(125deg, #0a0a0a, #2d2d44);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* Desktop menu */
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: var(--gray-800);
+            transition: 0.2s;
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        .nav-links a:not(.btn-nav-solicitar):after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--accent);
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:not(.btn-nav-solicitar):hover:after {
+            width: 100%;
+        }
+
+        .btn-nav-solicitar {
+            background: var(--black);
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            transition: all 0.25s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .btn-nav-solicitar:hover {
+            background: #2c2c2c;
+            transform: scale(1.02);
+        }
+
+        /* Mobile menu button */
+        .menu-toggle {
+            display: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--black);
+        }
+
+        /* HERO mejorado con glass y más dinamismo */
+        .hero {
+            padding: clamp(2.5rem, 7vw, 5rem) 0;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: clamp(2rem, 5vw, 3.5rem);
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(59,130,246,0.1);
+            backdrop-filter: blur(2px);
+            padding: 0.3rem 1rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+            margin-bottom: 1.2rem;
+            border: 1px solid rgba(59,130,246,0.2);
+        }
+
+        .hero-content h1 {
+            font-size: clamp(1.8rem, 5.5vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -1.5px;
+        }
+
+        .hero-highlight {
+            background: linear-gradient(120deg, #0a0a0a, #2563eb);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero-content p {
+            color: var(--gray-600);
+            font-size: clamp(0.9rem, 3vw, 1.05rem);
+            margin-bottom: 1.8rem;
+            line-height: 1.5;
+        }
+
+        .btn-solicitar {
+            background: var(--black);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            font-weight: 700;
+            border-radius: 56px;
+            font-size: clamp(0.85rem, 3vw, 1rem);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.25s;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+        }
+
+        .btn-solicitar:hover {
+            background: #1e1e2f;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 24px rgba(0,0,0,0.12);
+        }
+
+        /* Tarjeta de ecosistema premium */
+        .hero-stats {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            padding: clamp(1.2rem, 4vw, 1.8rem);
+            border: 1px solid var(--gray-200);
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+
+        .owner-badge {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .app-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin: 1.2rem 0;
+        }
+
+        .app-item {
+            text-align: center;
+            flex: 1;
+            min-width: 70px;
+            transition: all 0.2s;
+        }
+
+        .app-item i {
+            font-size: 1.5rem;
+            background: linear-gradient(145deg, #0a0a0a, #2c2c3a);
+            color: white;
+            padding: 0.7rem;
+            border-radius: 24px;
+            width: 52px;
+            height: 52px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+
+        .app-item:hover i {
+            transform: translateY(-5px);
+            background: var(--accent);
+        }
+
+        .stat-item {
+            margin-top: 1rem;
+        }
+
+        .stat-number {
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            font-weight: 800;
+        }
+
+        /* Tarjeta ecosistema mejorada */
+        .ecosistema-card {
+            background: linear-gradient(125deg, #f8fafc, #ffffff);
+            border-radius: 2rem;
+            padding: clamp(1.5rem, 4vw, 2.2rem);
+            margin: 2rem auto;
+            text-align: center;
+            border: 1px solid rgba(59,130,246,0.15);
+            box-shadow: 0 10px 25px -12px rgba(0,0,0,0.05);
+        }
+
+        .apps-badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.9rem;
+            margin: 1.2rem 0;
+        }
+
+        .app-pill {
+            background: white;
+            border-radius: 80px;
+            padding: 0.5rem 1.2rem;
+            font-weight: 600;
+            font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+            border: 1px solid var(--gray-200);
+            transition: all 0.2s;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+
+        .app-pill:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Sección servicios con grid premium */
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.6rem, 5vw, 2.4rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        .section-title:after {
+            content: '';
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), #0a0a0a);
+            display: block;
+            margin: 0.8rem auto;
+            border-radius: 4px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 1.6rem;
+            padding: 1.6rem;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s;
+            box-shadow: var(--card-shadow);
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--hover-shadow);
+            border-color: var(--gray-300);
+        }
+
+        .service-card i {
+            font-size: 2rem;
+            background: var(--gray-100);
+            padding: 0.6rem;
+            border-radius: 1rem;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+
+        /* CARRUSEL MEJORADO (Swiper) */
+        .swiper {
+            padding: 1rem 0 2.5rem;
+        }
+
+        .swiper-slide {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 1.6rem;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s;
+            box-shadow: var(--card-shadow);
+        }
+
+        .swiper-slide:hover {
+            transform: scale(1.02);
+            border-color: var(--accent);
+        }
+
+        .swiper-slide i {
+            font-size: 2.4rem;
+            background: var(--black);
+            color: white;
+            padding: 0.7rem;
+            border-radius: 28px;
+            width: 64px;
+            height: 64px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.7rem;
+        }
+
+        .app-status {
+            background: #eef2ff;
+            color: var(--accent);
+            border-radius: 40px;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.6rem;
+        }
+
+        /* Tech stack con badges interactivos */
+        .tech-stack {
+            background: var(--gray-50);
+            border-radius: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1.2rem;
+            margin: 1.8rem 0;
+        }
+        .tech-item {
+            background: white;
+            padding: 0.4rem 1.1rem;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: clamp(0.75rem, 2.8vw, 0.85rem);
+            transition: all 0.2s;
+            border: 1px solid var(--gray-200);
+        }
+        .tech-item:hover {
+            border-color: var(--accent);
+            background: #f5f9ff;
+        }
+
+        /* Modal elegante */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.25s;
+        }
+        .modal-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .modal-container {
+            background: white;
+            width: 90%;
+            max-width: 520px;
+            border-radius: 2rem;
+            padding: 1.6rem;
+            box-shadow: 0 30px 45px rgba(0,0,0,0.2);
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 2rem;
+            border: 1px solid var(--gray-300);
+            font-family: inherit;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+        }
+        .btn-submit {
+            background: var(--black);
+            color: white;
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 3rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-submit:hover {
+            background: #2c2c3a;
+        }
+        .toast-msg {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: #0a0a0a;
+            color: white;
+            padding: 0.7rem 1.3rem;
+            border-radius: 60px;
+            z-index: 1100;
+            opacity: 0;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: opacity 0.2s;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        footer {
+            background: #0a0a0a;
+            color: #9ca3af;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+            border-top: 1px solid #1f2937;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* RESPONSIVIDAD AVANZADA */
+        @media (max-width: 880px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero-stats {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background: rgba(255,255,255,0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 2rem 2rem;
+                gap: 1.8rem;
+                transition: 0.3s ease;
+                box-shadow: 2px 0 20px rgba(0,0,0,0.05);
+                z-index: 199;
+                border-right: 1px solid var(--gray-200);
+            }
+            .nav-links.active {
+                left: 0;
+            }
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+            .btn-nav-solicitar {
+                width: 100%;
+                text-align: center;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .app-icons {
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .app-item i {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+            .tech-stack {
+                gap: 0.5rem;
+            }
+            .modal-container {
+                padding: 1rem;
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+<div class="bg-corporate"></div>
+
+<nav class="navbar">
+    <div class="container nav-container">
+        <div class="logo"><h2>GC<span>-COMPANY</span></h2></div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#ecosistema">Nuestras Apps</a></li>
+            <li><a href="#soluciones">+Soluciones</a></li>
+            <li><a href="#" id="nav-solicitar-btn" class="btn-nav-solicitar">Solicitar</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section id="inicio" class="hero">
+    <div class="container hero-grid">
+        <div class="hero-content fade-up">
+            <div class="hero-badge"><i class="fas fa-crown"></i> Creadores del ecosistema tecnológico</div>
+            <h1>Soluciones <span class="hero-highlight">digitales potentes</span><br>para negocios que crecen</h1>
+            <p>Webs a medida, sistemas portables, inteligencia de negocios, instalaciones tecnológicas y más. <strong>Dueños y creadores de FINKI, Wallet Giko, NOVA y TOKTOK</strong> — miles de usuarios activos.</p>
+            <button class="btn-solicitar" id="hero-solicitar-btn"><i class="fas fa-paper-plane"></i> Solicitar servicio →</button>
+        </div>
+        <div class="hero-stats fade-up">
+            <div class="owner-badge"><i class="fas fa-chart-line"></i> PROPIETARIOS Y FUNDADORES</div>
+            <div class="app-icons">
+                <div class="app-item"><i class="fas fa-film"></i><span>FINKI</span></div>
+                <div class="app-item"><i class="fas fa-wallet"></i><span>GIKO</span></div>
+                <div class="app-item"><i class="fas fa-taxi"></i><span>NOVA</span></div>
+                <div class="app-item"><i class="fas fa-coins"></i><span>TOKTOK</span></div>
+            </div>
+            <div class="stat-item"><div class="stat-number">+4 apps</div><div>en producción & éxito</div></div>
+            <div class="stat-item"><div class="stat-number">+18K</div><div>usuarios activos</div></div>
+            <div class="stat-item"><div class="stat-number">⭐ Liderazgo</div><div>CEO & accionistas</div></div>
+        </div>
+    </div>
+</section>
+
+<section id="ecosistema" class="container">
+    <div class="ecosistema-card fade-up">
+        <h3 style="font-size: clamp(1.3rem, 5vw, 1.9rem);">🚀 Ecosistema tecnológico propio</h3>
+        <p style="margin-top: 0.8rem;">Somos creadores y dueños de cuatro plataformas digitales con miles de usuarios:</p>
+        <div class="apps-badge-group">
+            <span class="app-pill"><i class="fas fa-film"></i> <strong>FINKI</strong> – Películas y series</span>
+            <span class="app-pill"><i class="fas fa-wallet"></i> <strong>GIKO</strong> – Billetera digital</span>
+            <span class="app-pill"><i class="fas fa-taxi"></i> <strong>NOVA</strong> – Transporte tipo taxis</span>
+            <span class="app-pill"><i class="fas fa-coins"></i> <strong>TOKTOK</strong> – Wallet para recargas</span>
+        </div>
+        <p style="font-size: 0.85rem; color: #3b82f6;">✔ Streaming | ✔ Finanzas | ✔ Movilidad | ✔ Recargas móviles</p>
+    </div>
+</section>
+
+<section id="servicios" class="container" style="margin: 2rem auto;">
+    <h2 class="section-title fade-up">Servicios de alto impacto</h2>
+    <div class="services-grid">
+        <div class="service-card fade-up"><i class="fas fa-globe"></i><h3>Páginas Web a medida</h3><p>Diseño élite, full responsive, SEO técnico y rendimiento.</p></div>
+        <div class="service-card fade-up"><i class="fas fa-chalkboard-user"></i><h3>Sistemas empresariales</h3><p>ERP, inventarios, asistencias, estadísticas en vivo.</p></div>
+        <div class="service-card fade-up"><i class="fas fa-cart-shopping"></i><h3>Tiendas online</h3><p>Ecommerce, pasarelas, catálogos interactivos.</p></div>
+        <div class="service-card fade-up"><i class="fas fa-chart-line"></i><h3>Marketing & Diseño</h3><p>Branding, campañas, diseño gráfico profesional.</p></div>
+        <div class="service-card fade-up"><i class="fas fa-utensils"></i><h3>Restaurantes & tiendas</h3><p>Comandas, QR, menús digitales avanzados.</p></div>
+        <div class="service-card fade-up"><i class="fas fa-clock"></i><h3>Control de personal</h3><p>Asistencias, reportes, geolocalización en tiempo real.</p></div>
+    </div>
+</section>
+
+<div class="container" style="margin: 2rem auto;">
+    <h2 class="section-title fade-up">Nuestras apps en acción</h2>
+    <div class="swiper mySwiper fade-up">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><i class="fas fa-film"></i><h3>FINKI</h3><p>Streaming de películas y series. +5k usuarios activos.</p><span class="app-status">📺 En Línea</span></div>
+            <div class="swiper-slide"><i class="fas fa-wallet"></i><h3>Wallet Giko</h3><p>Billetera digital, pagos y transferencias seguras.</p><span class="app-status">💳 Activa</span></div>
+            <div class="swiper-slide"><i class="fas fa-taxi"></i><h3>NOVA</h3><p>Transporte tipo taxi, seguro y rápido en tu ciudad.</p><span class="app-status">🚖 Operativa</span></div>
+            <div class="swiper-slide"><i class="fas fa-coins"></i><h3>TOKTOK</h3><p>Wallet para recargas de celular y servicios.</p><span class="app-status">⚡ Top recargas</span></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>
+
+<section id="soluciones" class="container" style="margin: 1rem auto 2rem;">
+    <h2 class="section-title fade-up">Soluciones integrales</h2>
+    <div class="tech-stack fade-up">
+        <span class="tech-item"><i class="fas fa-video"></i> Cámaras de seguridad</span>
+        <span class="tech-item"><i class="fas fa-satellite-dish"></i> Starlink instalación completa</span>
+        <span class="tech-item"><i class="fas fa-file-invoice"></i> Cotizaciones automatizadas</span>
+        <span class="tech-item"><i class="fas fa-microchip"></i> Electrónica domiciliaria</span>
+        <span class="tech-item"><i class="fas fa-cloud"></i> Sistemas 24/7 en la nube</span>
+        <span class="tech-item"><i class="fas fa-chart-simple"></i> Estadísticas a medida</span>
+    </div>
+    <div class="fade-up" style="background: linear-gradient(115deg, #fafcff, #ffffff); border-radius: 1.8rem; padding: 1.5rem; text-align: center; margin-top: 1rem; border:1px solid #eef2ff;">
+        <p><strong>🔧 ¿Buscas algo a medida?</strong> Desarrollamos cualquier sistema: control de inventarios, gestión de restaurantes, asistencias, estadísticas en tiempo real y más.</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 GC-Company · Creadores de FINKI, Wallet Giko, NOVA y TOKTOK · Innovación sin límites</p>
+    <p style="margin-top: 0.5rem;"><i class="fas fa-envelope"></i> hello@gccompany.com  |  <i class="fab fa-whatsapp"></i> +57 310 000 0000</p>
+</footer>
+
+<div id="modalSolicitar" class="modal-overlay">
+    <div class="modal-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h3 style="font-size: 1.4rem; font-weight: 700;">Solicitar servicio</h3>
+            <button class="close-modal" id="closeModalBtn" style="font-size: 1.8rem; background: none; border: none; cursor: pointer;">&times;</button>
+        </div>
+        <form id="solicitudForm">
+            <div class="form-group"><label>Nombre completo *</label><input type="text" id="nombre" required placeholder="Ej: Carlos Gómez"></div>
+            <div class="form-group"><label>Celular *</label><input type="tel" id="telefono" required placeholder="+57 300 0000000"></div>
+            <div class="form-group"><label>Ubicación (Ciudad/País) *</label><input type="text" id="ubicacion" required placeholder="Bogotá, Colombia"></div>
+            <div class="form-group"><label>Tipo de servicio</label>
+                <select id="tipoServicio" required>
+                    <option>Desarrollo web a medida</option><option>Sistema empresarial / ERP</option><option>Tienda online</option>
+                    <option>Marketing / Diseño</option><option>Cámaras / Seguridad</option><option>Instalación Starlink</option>
+                    <option>Soluciones a medida</option>
+                </select>
+            </div>
+            <div class="form-group"><label>Detalles del proyecto *</label><textarea id="descripcion" rows="3" required placeholder="Cuéntanos qué necesitas..."></textarea></div>
+            <button type="submit" class="btn-submit" id="submitBtn"><i class="fab fa-telegram"></i> Enviar solicitud</button>
+        </form>
+        <p style="font-size: 0.65rem; text-align: center; margin-top: 0.8rem; color:#6c757d;">Los datos se envían directamente a nuestro equipo</p>
+    </div>
+</div>
+<div id="toastMsg" class="toast-msg">✅ Solicitud enviada</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    // ---------- CONFIGURACIÓN TELEGRAM (REEMPLAZAR PARA PRODUCCIÓN) ----------
+    const TELEGRAM_BOT_TOKEN = "AQUI_TU_TOKEN_DE_BOT";
+    const TELEGRAM_CHAT_ID = "AQUI_TU_CHAT_ID";
+    // --------------------------------------------------------------------
+
+    // Intersection Observer mejorado
+    const fades = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+    fades.forEach(el => observer.observe(el));
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = menuToggle.querySelector('i');
+        if (navLinks.classList.contains('active')) icon.classList.replace('fa-bars', 'fa-times');
+        else icon.classList.replace('fa-times', 'fa-bars');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        });
+    });
+
+    // Modal logic
+    const modal = document.getElementById('modalSolicitar');
+    const openBtns = document.querySelectorAll('#hero-solicitar-btn, #nav-solicitar-btn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const form = document.getElementById('solicitudForm');
+    const toast = document.getElementById('toastMsg');
+
+    function openModal() { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeModal() { modal.classList.remove('active'); document.body.style.overflow = ''; }
+    openBtns.forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+
+    async function sendToTelegram(data) {
+        if (!TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN === "AQUI_TU_TOKEN_DE_BOT" || !TELEGRAM_CHAT_ID || TELEGRAM_CHAT_ID === "AQUI_TU_CHAT_ID") {
+            console.warn("Configura el bot y chat ID en el código para activar Telegram.");
+            showToast("⚠️ Demo: solicitud guardada (modo desarrollo)", true);
+            return false;
+        }
+        const message = `🆕 *GC-COMPANY - Nueva solicitud* 🆕\n\n👤 *Nombre:* ${data.nombre}\n📞 *Teléfono:* ${data.telefono}\n📍 *Ubicación:* ${data.ubicacion}\n🛠 *Servicio:* ${data.tipoServicio}\n📝 *Descripción:* ${data.descripcion}\n\n🌐 Enviado desde landing oficial.`;
+        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+        const params = { chat_id: TELEGRAM_CHAT_ID, text: message, parse_mode: 'Markdown' };
+        try {
+            const resp = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(params) });
+            const json = await resp.json();
+            return json.ok;
+        } catch(e) { return false; }
+    }
+
+    function showToast(msg, isError=false) {
+        toast.textContent = msg;
+        toast.style.background = isError ? '#b91c1c' : '#0a0a0a';
+        toast.style.opacity = '1';
+        setTimeout(() => toast.style.opacity = '0', 3800);
+    }
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const nombre = document.getElementById('nombre').value.trim();
+        const telefono = document.getElementById('telefono').value.trim();
+        const ubicacion = document.getElementById('ubicacion').value.trim();
+        const tipoServicio = document.getElementById('tipoServicio').value;
+        const descripcion = document.getElementById('descripcion').value.trim();
+        if(!nombre || !telefono || !ubicacion || !descripcion) {
+            showToast("❌ Completa todos los campos requeridos", true);
+            return;
+        }
+        const btn = document.getElementById('submitBtn');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        btn.disabled = true;
+        const success = await sendToTelegram({ nombre, telefono, ubicacion, tipoServicio, descripcion });
+        if(success) {
+            showToast("✅ Solicitud enviada con éxito. ¡Te contactaremos!");
+            form.reset();
+            closeModal();
+        } else if (TELEGRAM_BOT_TOKEN === "AQUI_TU_TOKEN_DE_BOT") {
+            showToast("✅ Demo: solicitud recibida (integra Telegram activable)", false);
+            form.reset();
+            closeModal();
+        } else {
+            showToast("❌ Error al enviar. Inténtalo de nuevo.", true);
+        }
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    });
+
+    // Swiper mejorado (autoplay y navegación fluida)
+    new Swiper('.mySwiper', {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoplay: { delay: 3800, disableOnInteraction: false, pauseOnMouseEnter: true },
+        pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        breakpoints: {
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 28 }
+        }
+    });
+</script>
+</body>
+</html>
