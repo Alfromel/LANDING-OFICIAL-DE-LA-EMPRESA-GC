@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
-    <meta name="description" content="GC-Company: Dueños de FINKI, Wallet Giko, NOVA y TOKTOK. Creamos soluciones digitales de alto impacto, webs, apps, sistemas empresariales e instalaciones tecnológicas.">
-    <title>GC-COMPANY | Innovación digital & ecosistema de apps</title>
+    <meta name="description" content="GC-Company: Soluciones digitales profesionales. Desarrollamos software a medida, páginas web, sistemas empresariales e instalaciones tecnológicas. Somos creadores de FINKI, Wallet Giko, NOVA y TOKTOK.">
+    <title>GC-Company | Soluciones digitales profesionales</title>
     <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
@@ -18,14 +18,13 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #0a0a0a;
+            background-color: #f5f7fb;
+            color: #1a1f2c;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            position: relative;
         }
 
-        /* === FONDO EMPRESARIAL ELEGANTE === */
+        /* Fondo corporativo elegante: textura muy sutil + degradado empresarial */
         body::before {
             content: "";
             position: fixed;
@@ -33,12 +32,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
-                linear-gradient(rgba(59,130,246,0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(59,130,246,0.02) 1px, transparent 1px);
-            background-size: 40px 40px;
+            background-image: radial-gradient(#e5e9f0 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            opacity: 0.4;
             pointer-events: none;
-            z-index: -2;
+            z-index: -1;
         }
 
         body::after {
@@ -48,57 +46,43 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 30%, rgba(255,255,240,0.03) 0%, rgba(0,0,0,0.01) 100%);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* Gradiente corporativo sutil en el fondo general */
-        .bg-corporate {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(125deg, #fdfdfd 0%, #f5f9ff 100%);
-            z-index: -3;
+            background: linear-gradient(145deg, #f8fafd 0%, #eef2f8 100%);
+            z-index: -2;
         }
 
         :root {
-            --black: #0a0a0a;
+            --primary-dark: #0f2b3d;
+            --primary: #1e4a76;
+            --primary-light: #2c6288;
+            --accent: #2c7da0;
+            --gray-100: #f0f2f5;
+            --gray-200: #e2e6ec;
+            --gray-300: #cbd0d9;
+            --gray-600: #5a6874;
+            --gray-800: #2d3a46;
+            --black: #0a0f14;
             --white: #ffffff;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-300: #cbd5e1;
-            --gray-600: #475569;
-            --gray-800: #1e293b;
-            --primary: #0f172a;
-            --accent: #3b82f6;
-            --accent-glow: #2563eb;
-            --grad-1: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-            --glass-bg: rgba(255, 255, 255, 0.9);
-            --card-shadow: 0 20px 35px -12px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.02);
-            --hover-shadow: 0 30px 40px -18px rgba(0,0,0,0.15);
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 32px -12px rgba(0, 0, 0, 0.08);
         }
 
         .container {
             width: 100%;
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
-        /* ---------- NAVBAR MODERNA + HAMBURGUESA RESPONSIVE ---------- */
+        /* ========== NAVBAR ========== */
         .navbar {
             background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(16px);
+            backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
             z-index: 200;
             border-bottom: 1px solid var(--gray-200);
-            padding: 0.7rem 0;
-            transition: all 0.2s;
+            padding: 0.8rem 0;
         }
 
         .nav-container {
@@ -108,19 +92,20 @@
         }
 
         .logo h2 {
-            font-size: clamp(1.3rem, 5vw, 1.9rem);
-            font-weight: 800;
-            letter-spacing: -1px;
-            background: linear-gradient(125deg, #0a0a0a, #2d2d44);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--primary-dark);
         }
 
-        /* Desktop menu */
+        .logo span {
+            font-weight: 500;
+            color: var(--primary-light);
+        }
+
         .nav-links {
             display: flex;
-            gap: 1.8rem;
+            gap: 2rem;
             list-style: none;
             align-items: center;
         }
@@ -130,137 +115,115 @@
             font-weight: 500;
             color: var(--gray-800);
             transition: 0.2s;
-            font-size: 0.95rem;
-            position: relative;
+            font-size: 0.9rem;
         }
 
-        .nav-links a:not(.btn-nav-solicitar):after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background: var(--accent);
-            transition: 0.3s ease;
-        }
-
-        .nav-links a:not(.btn-nav-solicitar):hover:after {
-            width: 100%;
+        .nav-links a:hover {
+            color: var(--primary);
         }
 
         .btn-nav-solicitar {
-            background: var(--black);
+            background: var(--primary-dark);
             color: white !important;
-            padding: 0.5rem 1.2rem;
+            padding: 0.4rem 1.2rem;
             border-radius: 40px;
-            transition: all 0.25s;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: all 0.2s;
         }
 
         .btn-nav-solicitar:hover {
-            background: #2c2c2c;
-            transform: scale(1.02);
+            background: var(--primary);
+            transform: translateY(-1px);
         }
 
-        /* Mobile menu button */
+        /* Mobile menu */
         .menu-toggle {
             display: none;
-            font-size: 1.6rem;
-            cursor: pointer;
+            font-size: 1.5rem;
             background: none;
             border: none;
-            color: var(--black);
+            cursor: pointer;
+            color: var(--primary-dark);
         }
 
-        /* HERO mejorado con glass y más dinamismo */
+        /* ========== HERO ========== */
         .hero {
-            padding: clamp(2.5rem, 7vw, 5rem) 0;
-            position: relative;
+            padding: 3rem 0 4rem;
         }
 
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 0.9fr;
-            gap: clamp(2rem, 5vw, 3.5rem);
+            gap: 2.5rem;
             align-items: center;
         }
 
         .hero-badge {
             display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(59,130,246,0.1);
-            backdrop-filter: blur(2px);
-            padding: 0.3rem 1rem;
-            border-radius: 60px;
+            background: rgba(30, 74, 118, 0.08);
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
             font-weight: 600;
-            font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+            font-size: 0.75rem;
+            color: var(--primary);
             margin-bottom: 1.2rem;
-            border: 1px solid rgba(59,130,246,0.2);
         }
 
         .hero-content h1 {
-            font-size: clamp(1.8rem, 5.5vw, 3.6rem);
-            font-weight: 800;
+            font-size: 2.6rem;
+            font-weight: 700;
             line-height: 1.2;
             margin-bottom: 1rem;
-            letter-spacing: -1.5px;
+            color: var(--black);
         }
 
         .hero-highlight {
-            background: linear-gradient(120deg, #0a0a0a, #2563eb);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+            color: var(--primary);
         }
 
         .hero-content p {
             color: var(--gray-600);
-            font-size: clamp(0.9rem, 3vw, 1.05rem);
+            font-size: 1rem;
             margin-bottom: 1.8rem;
             line-height: 1.5;
         }
 
         .btn-solicitar {
-            background: var(--black);
+            background: var(--primary-dark);
             color: white;
             border: none;
-            padding: 0.8rem 1.8rem;
-            font-weight: 700;
-            border-radius: 56px;
-            font-size: clamp(0.85rem, 3vw, 1rem);
+            padding: 0.7rem 1.6rem;
+            font-weight: 600;
+            border-radius: 40px;
+            font-size: 0.9rem;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            transition: all 0.25s;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+            gap: 8px;
+            transition: all 0.2s;
+            box-shadow: var(--shadow-sm);
         }
 
         .btn-solicitar:hover {
-            background: #1e1e2f;
-            transform: translateY(-3px);
-            box-shadow: 0 14px 24px rgba(0,0,0,0.12);
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
 
-        /* Tarjeta de ecosistema premium */
+        /* Tarjeta apps */
         .hero-stats {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            border-radius: 2rem;
-            padding: clamp(1.2rem, 4vw, 1.8rem);
+            background: var(--white);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
             border: 1px solid var(--gray-200);
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s;
+            box-shadow: var(--shadow-md);
         }
 
         .owner-badge {
+            font-size: 0.7rem;
             font-weight: 600;
-            color: var(--accent);
+            color: var(--primary);
+            letter-spacing: 0.5px;
             margin-bottom: 1rem;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
         }
 
         .app-icons {
@@ -268,213 +231,200 @@
             flex-wrap: wrap;
             justify-content: space-between;
             gap: 0.5rem;
-            margin: 1.2rem 0;
+            margin: 1rem 0;
         }
 
         .app-item {
             text-align: center;
             flex: 1;
-            min-width: 70px;
-            transition: all 0.2s;
+            min-width: 65px;
         }
 
         .app-item i {
-            font-size: 1.5rem;
-            background: linear-gradient(145deg, #0a0a0a, #2c2c3a);
-            color: white;
-            padding: 0.7rem;
-            border-radius: 24px;
-            width: 52px;
-            height: 52px;
+            font-size: 1.3rem;
+            background: var(--gray-100);
+            color: var(--primary-dark);
+            padding: 0.6rem;
+            border-radius: 16px;
+            width: 44px;
+            height: 44px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             transition: 0.2s;
         }
 
-        .app-item:hover i {
-            transform: translateY(-5px);
-            background: var(--accent);
-        }
-
-        .stat-item {
-            margin-top: 1rem;
+        .app-item span {
+            display: block;
+            font-weight: 600;
+            font-size: 0.7rem;
+            margin-top: 0.4rem;
         }
 
         .stat-number {
-            font-size: clamp(1.3rem, 4vw, 1.8rem);
-            font-weight: 800;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-dark);
         }
 
-        /* Tarjeta ecosistema mejorada */
+        /* Sección ecosistema */
         .ecosistema-card {
-            background: linear-gradient(125deg, #f8fafc, #ffffff);
-            border-radius: 2rem;
-            padding: clamp(1.5rem, 4vw, 2.2rem);
+            background: var(--white);
+            border-radius: 1.5rem;
+            padding: 1.8rem;
             margin: 2rem auto;
             text-align: center;
-            border: 1px solid rgba(59,130,246,0.15);
-            box-shadow: 0 10px 25px -12px rgba(0,0,0,0.05);
+            border: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-sm);
         }
 
         .apps-badge-group {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.9rem;
+            gap: 0.8rem;
             margin: 1.2rem 0;
         }
 
         .app-pill {
-            background: white;
-            border-radius: 80px;
-            padding: 0.5rem 1.2rem;
-            font-weight: 600;
-            font-size: clamp(0.75rem, 2.5vw, 0.9rem);
-            border: 1px solid var(--gray-200);
-            transition: all 0.2s;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+            background: var(--gray-100);
+            border-radius: 60px;
+            padding: 0.4rem 1rem;
+            font-weight: 500;
+            font-size: 0.8rem;
+            border: none;
+            color: var(--gray-800);
         }
 
-        .app-pill:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        /* Sección servicios con grid premium */
+        /* Servicios */
         .section-title {
             text-align: center;
-            font-size: clamp(1.6rem, 5vw, 2.4rem);
+            font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 2rem;
+            color: var(--black);
         }
         .section-title:after {
             content: '';
-            width: 70px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), #0a0a0a);
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
             display: block;
-            margin: 0.8rem auto;
-            border-radius: 4px;
+            margin: 0.6rem auto;
+            border-radius: 2px;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 1.6rem;
+            gap: 1.5rem;
             margin-bottom: 2rem;
         }
 
         .service-card {
             background: var(--white);
-            border-radius: 1.6rem;
-            padding: 1.6rem;
+            border-radius: 1.2rem;
+            padding: 1.4rem;
             border: 1px solid var(--gray-200);
-            transition: all 0.3s;
-            box-shadow: var(--card-shadow);
+            transition: all 0.25s;
+            box-shadow: var(--shadow-sm);
         }
 
         .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--hover-shadow);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
             border-color: var(--gray-300);
         }
 
         .service-card i {
-            font-size: 2rem;
-            background: var(--gray-100);
-            padding: 0.6rem;
-            border-radius: 1rem;
-            color: var(--accent);
+            font-size: 1.6rem;
+            color: var(--primary);
             margin-bottom: 0.8rem;
         }
 
-        /* CARRUSEL MEJORADO (Swiper) */
-        .swiper {
-            padding: 1rem 0 2.5rem;
+        .service-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
         }
 
+        .service-card p {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+
+        /* Swiper carrusel profesional */
+        .swiper {
+            padding: 0.5rem 0 2rem;
+        }
         .swiper-slide {
-            background: white;
-            border-radius: 1.8rem;
-            padding: 1.6rem;
+            background: var(--white);
+            border-radius: 1.2rem;
+            padding: 1.2rem;
             text-align: center;
             border: 1px solid var(--gray-200);
-            transition: all 0.3s;
-            box-shadow: var(--card-shadow);
+            box-shadow: var(--shadow-sm);
         }
-
-        .swiper-slide:hover {
-            transform: scale(1.02);
-            border-color: var(--accent);
-        }
-
         .swiper-slide i {
-            font-size: 2.4rem;
-            background: var(--black);
-            color: white;
-            padding: 0.7rem;
-            border-radius: 28px;
-            width: 64px;
-            height: 64px;
+            font-size: 1.8rem;
+            background: var(--gray-100);
+            color: var(--primary-dark);
+            padding: 0.6rem;
+            border-radius: 20px;
+            width: 56px;
+            height: 56px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 0.7rem;
+            margin-bottom: 0.6rem;
         }
-
         .app-status {
-            background: #eef2ff;
-            color: var(--accent);
+            background: #e6f0f9;
+            color: var(--primary);
             border-radius: 40px;
             padding: 0.2rem 0.8rem;
             font-size: 0.7rem;
             font-weight: 600;
             display: inline-block;
-            margin-top: 0.6rem;
+            margin-top: 0.5rem;
         }
 
-        /* Tech stack con badges interactivos */
+        /* Tech stack */
         .tech-stack {
-            background: var(--gray-50);
-            border-radius: 2rem;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.8rem;
-            padding: 1.2rem;
-            margin: 1.8rem 0;
+            gap: 0.7rem;
+            margin: 1.5rem 0;
         }
         .tech-item {
-            background: white;
-            padding: 0.4rem 1.1rem;
-            border-radius: 60px;
+            background: var(--white);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
             font-weight: 500;
-            font-size: clamp(0.75rem, 2.8vw, 0.85rem);
-            transition: all 0.2s;
+            font-size: 0.8rem;
             border: 1px solid var(--gray-200);
+            transition: 0.2s;
         }
         .tech-item:hover {
-            border-color: var(--accent);
-            background: #f5f9ff;
+            border-color: var(--primary);
         }
 
-        /* Modal elegante */
+        /* Modal */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(8px);
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 1000;
             visibility: hidden;
             opacity: 0;
-            transition: 0.25s;
+            transition: 0.2s;
         }
         .modal-overlay.active {
             visibility: visible;
@@ -483,78 +433,67 @@
         .modal-container {
             background: white;
             width: 90%;
-            max-width: 520px;
-            border-radius: 2rem;
-            padding: 1.6rem;
-            box-shadow: 0 30px 45px rgba(0,0,0,0.2);
+            max-width: 500px;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-lg);
         }
         .form-group {
             margin-bottom: 1rem;
         }
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 0.8rem 1rem;
+            padding: 0.7rem 1rem;
             border-radius: 2rem;
             border: 1px solid var(--gray-300);
             font-family: inherit;
-            font-size: 0.9rem;
-            transition: 0.2s;
-        }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+            font-size: 0.85rem;
         }
         .btn-submit {
-            background: var(--black);
+            background: var(--primary-dark);
             color: white;
             width: 100%;
-            padding: 0.8rem;
+            padding: 0.7rem;
             border-radius: 3rem;
-            font-weight: bold;
+            font-weight: 600;
             border: none;
             cursor: pointer;
             transition: 0.2s;
         }
         .btn-submit:hover {
-            background: #2c2c3a;
+            background: var(--primary);
         }
         .toast-msg {
             position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            background: #0a0a0a;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary-dark);
             color: white;
-            padding: 0.7rem 1.3rem;
-            border-radius: 60px;
-            z-index: 1100;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
             opacity: 0;
-            font-size: 0.85rem;
-            font-weight: 500;
             transition: opacity 0.2s;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
-        footer {
-            background: #0a0a0a;
-            color: #9ca3af;
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 3rem;
-            font-size: clamp(0.7rem, 2.5vw, 0.85rem);
-            border-top: 1px solid #1f2937;
-            position: relative;
-            z-index: 5;
+            z-index: 1100;
         }
 
-        /* RESPONSIVIDAD AVANZADA */
-        @media (max-width: 880px) {
+        footer {
+            background: var(--primary-dark);
+            color: #ccdde9;
+            text-align: center;
+            padding: 1.8rem;
+            margin-top: 3rem;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
             .hero-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            .hero-stats {
-                max-width: 500px;
-                margin: 0 auto;
+            .hero-content h1 {
+                font-size: 2rem;
             }
         }
 
@@ -564,26 +503,22 @@
             }
             .nav-links {
                 position: fixed;
-                top: 70px;
+                top: 68px;
                 left: -100%;
-                width: 80%;
-                height: calc(100vh - 70px);
-                background: rgba(255,255,255,0.98);
-                backdrop-filter: blur(20px);
+                width: 70%;
+                height: calc(100vh - 68px);
+                background: white;
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 2rem 2rem;
-                gap: 1.8rem;
-                transition: 0.3s ease;
-                box-shadow: 2px 0 20px rgba(0,0,0,0.05);
-                z-index: 199;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: 0.3s;
+                box-shadow: 2px 0 15px rgba(0,0,0,0.05);
                 border-right: 1px solid var(--gray-200);
+                z-index: 199;
             }
             .nav-links.active {
                 left: 0;
-            }
-            .nav-links a {
-                font-size: 1.1rem;
             }
             .btn-nav-solicitar {
                 width: 100%;
@@ -592,33 +527,21 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
-            .app-icons {
-                justify-content: center;
-                gap: 1rem;
-            }
         }
 
         @media (max-width: 480px) {
             .container {
                 padding: 0 1rem;
             }
-            .app-item i {
-                width: 44px;
-                height: 44px;
-                font-size: 1.2rem;
-            }
-            .tech-stack {
-                gap: 0.5rem;
-            }
-            .modal-container {
+            .hero-stats {
                 padding: 1rem;
             }
         }
 
         .fade-up {
             opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease;
+            transform: translateY(16px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
         .fade-up.visible {
             opacity: 1;
@@ -627,17 +550,16 @@
     </style>
 </head>
 <body>
-<div class="bg-corporate"></div>
 
 <nav class="navbar">
     <div class="container nav-container">
         <div class="logo"><h2>GC<span>-COMPANY</span></h2></div>
-        <button class="menu-toggle" id="menuToggle" aria-label="Menú"><i class="fas fa-bars"></i></button>
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
         <ul class="nav-links" id="navLinks">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#ecosistema">Nuestras Apps</a></li>
-            <li><a href="#soluciones">+Soluciones</a></li>
+            <li><a href="#ecosistema">Apps</a></li>
+            <li><a href="#soluciones">Soluciones</a></li>
             <li><a href="#" id="nav-solicitar-btn" class="btn-nav-solicitar">Solicitar</a></li>
         </ul>
     </div>
@@ -646,60 +568,59 @@
 <section id="inicio" class="hero">
     <div class="container hero-grid">
         <div class="hero-content fade-up">
-            <div class="hero-badge"><i class="fas fa-crown"></i> Creadores del ecosistema tecnológico</div>
-            <h1>Soluciones <span class="hero-highlight">digitales potentes</span><br>para negocios que crecen</h1>
-            <p>Webs a medida, sistemas portables, inteligencia de negocios, instalaciones tecnológicas y más. <strong>Dueños y creadores de FINKI, Wallet Giko, NOVA y TOKTOK</strong> — miles de usuarios activos.</p>
-            <button class="btn-solicitar" id="hero-solicitar-btn"><i class="fas fa-paper-plane"></i> Solicitar servicio →</button>
+            <div class="hero-badge"><i class="fas fa-building"></i> Empresa líder en tecnología</div>
+            <h1>Soluciones <span class="hero-highlight">digitales profesionales</span><br>para empresas que evolucionan</h1>
+            <p>Desarrollo de software a medida, páginas web, sistemas ERP, tiendas online, instalaciones tecnológicas y más. Somos creadores de FINKI, Wallet Giko, NOVA y TOKTOK.</p>
+            <button class="btn-solicitar" id="hero-solicitar-btn"><i class="fas fa-paper-plane"></i> Cotizar ahora</button>
         </div>
         <div class="hero-stats fade-up">
-            <div class="owner-badge"><i class="fas fa-chart-line"></i> PROPIETARIOS Y FUNDADORES</div>
+            <div class="owner-badge"><i class="fas fa-chart-line"></i> ECOSISTEMA PROPIO</div>
             <div class="app-icons">
                 <div class="app-item"><i class="fas fa-film"></i><span>FINKI</span></div>
-                <div class="app-item"><i class="fas fa-wallet"></i><span>GIKO</span></div>
+                <div class="app-item"><i class="fas fa-wallet"></i><span>Giko Wallet</span></div>
                 <div class="app-item"><i class="fas fa-taxi"></i><span>NOVA</span></div>
                 <div class="app-item"><i class="fas fa-coins"></i><span>TOKTOK</span></div>
             </div>
-            <div class="stat-item"><div class="stat-number">+4 apps</div><div>en producción & éxito</div></div>
+            <div class="stat-item"><div class="stat-number">+4 apps</div><div>en producción activa</div></div>
             <div class="stat-item"><div class="stat-number">+18K</div><div>usuarios activos</div></div>
-            <div class="stat-item"><div class="stat-number">⭐ Liderazgo</div><div>CEO & accionistas</div></div>
         </div>
     </div>
 </section>
 
 <section id="ecosistema" class="container">
     <div class="ecosistema-card fade-up">
-        <h3 style="font-size: clamp(1.3rem, 5vw, 1.9rem);">🚀 Ecosistema tecnológico propio</h3>
-        <p style="margin-top: 0.8rem;">Somos creadores y dueños de cuatro plataformas digitales con miles de usuarios:</p>
+        <h3 style="font-size: 1.4rem;">🚀 Ecosistema tecnológico propio</h3>
+        <p style="margin-top: 0.5rem;">Somos dueños y desarrolladores de cuatro plataformas digitales con miles de usuarios:</p>
         <div class="apps-badge-group">
-            <span class="app-pill"><i class="fas fa-film"></i> <strong>FINKI</strong> – Películas y series</span>
-            <span class="app-pill"><i class="fas fa-wallet"></i> <strong>GIKO</strong> – Billetera digital</span>
-            <span class="app-pill"><i class="fas fa-taxi"></i> <strong>NOVA</strong> – Transporte tipo taxis</span>
-            <span class="app-pill"><i class="fas fa-coins"></i> <strong>TOKTOK</strong> – Wallet para recargas</span>
+            <span class="app-pill"><i class="fas fa-film"></i> <strong>FINKI</strong> – Streaming</span>
+            <span class="app-pill"><i class="fas fa-wallet"></i> <strong>Wallet Giko</strong> – Fintech</span>
+            <span class="app-pill"><i class="fas fa-taxi"></i> <strong>NOVA</strong> – Transporte</span>
+            <span class="app-pill"><i class="fas fa-coins"></i> <strong>TOKTOK</strong> – Recargas</span>
         </div>
-        <p style="font-size: 0.85rem; color: #3b82f6;">✔ Streaming | ✔ Finanzas | ✔ Movilidad | ✔ Recargas móviles</p>
+        <p style="font-size: 0.8rem; color: var(--gray-600);">✔ Streaming · ✔ Billetera digital · ✔ Taxis · ✔ Recargas móviles</p>
     </div>
 </section>
 
-<section id="servicios" class="container" style="margin: 2rem auto;">
-    <h2 class="section-title fade-up">Servicios de alto impacto</h2>
+<section id="servicios" class="container" style="margin: 1.5rem auto;">
+    <h2 class="section-title fade-up">Servicios corporativos</h2>
     <div class="services-grid">
-        <div class="service-card fade-up"><i class="fas fa-globe"></i><h3>Páginas Web a medida</h3><p>Diseño élite, full responsive, SEO técnico y rendimiento.</p></div>
-        <div class="service-card fade-up"><i class="fas fa-chalkboard-user"></i><h3>Sistemas empresariales</h3><p>ERP, inventarios, asistencias, estadísticas en vivo.</p></div>
-        <div class="service-card fade-up"><i class="fas fa-cart-shopping"></i><h3>Tiendas online</h3><p>Ecommerce, pasarelas, catálogos interactivos.</p></div>
-        <div class="service-card fade-up"><i class="fas fa-chart-line"></i><h3>Marketing & Diseño</h3><p>Branding, campañas, diseño gráfico profesional.</p></div>
-        <div class="service-card fade-up"><i class="fas fa-utensils"></i><h3>Restaurantes & tiendas</h3><p>Comandas, QR, menús digitales avanzados.</p></div>
-        <div class="service-card fade-up"><i class="fas fa-clock"></i><h3>Control de personal</h3><p>Asistencias, reportes, geolocalización en tiempo real.</p></div>
+        <div class="service-card fade-up"><i class="fas fa-globe"></i><h3>Páginas web a medida</h3><p>Diseño profesional, responsive, optimización SEO.</p></div>
+        <div class="service-card fade-up"><i class="fas fa-chalkboard-user"></i><h3>Sistemas empresariales</h3><p>ERP, inventarios, asistencias, reportes.</p></div>
+        <div class="service-card fade-up"><i class="fas fa-cart-shopping"></i><h3>Tiendas online</h3><p>Ecommerce completo, pasarelas de pago, catálogos.</p></div>
+        <div class="service-card fade-up"><i class="fas fa-chart-line"></i><h3>Marketing digital</h3><p>Branding, campañas, diseño gráfico profesional.</p></div>
+        <div class="service-card fade-up"><i class="fas fa-utensils"></i><h3>Restaurantes & retail</h3><p>Sistemas de comandas, QR, menús digitales.</p></div>
+        <div class="service-card fade-up"><i class="fas fa-clock"></i><h3>Control de personal</h3><p>Gestión de asistencias y geolocalización.</p></div>
     </div>
 </section>
 
-<div class="container" style="margin: 2rem auto;">
-    <h2 class="section-title fade-up">Nuestras apps en acción</h2>
+<div class="container" style="margin: 1.5rem auto;">
+    <h2 class="section-title fade-up">Nuestras apps</h2>
     <div class="swiper mySwiper fade-up">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><i class="fas fa-film"></i><h3>FINKI</h3><p>Streaming de películas y series. +5k usuarios activos.</p><span class="app-status">📺 En Línea</span></div>
-            <div class="swiper-slide"><i class="fas fa-wallet"></i><h3>Wallet Giko</h3><p>Billetera digital, pagos y transferencias seguras.</p><span class="app-status">💳 Activa</span></div>
-            <div class="swiper-slide"><i class="fas fa-taxi"></i><h3>NOVA</h3><p>Transporte tipo taxi, seguro y rápido en tu ciudad.</p><span class="app-status">🚖 Operativa</span></div>
-            <div class="swiper-slide"><i class="fas fa-coins"></i><h3>TOKTOK</h3><p>Wallet para recargas de celular y servicios.</p><span class="app-status">⚡ Top recargas</span></div>
+            <div class="swiper-slide"><i class="fas fa-film"></i><h3>FINKI</h3><p>Plataforma de streaming con +5k usuarios.</p><span class="app-status">Activo</span></div>
+            <div class="swiper-slide"><i class="fas fa-wallet"></i><h3>Wallet Giko</h3><p>Billetera digital para pagos y transferencias.</p><span class="app-status">Operativo</span></div>
+            <div class="swiper-slide"><i class="fas fa-taxi"></i><h3>NOVA</h3><p>Aplicación de transporte tipo taxi.</p><span class="app-status">En servicio</span></div>
+            <div class="swiper-slide"><i class="fas fa-coins"></i><h3>TOKTOK</h3><p>Recargas de celular y servicios.</p><span class="app-status">Top ventas</span></div>
         </div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-next"></div>
@@ -710,56 +631,56 @@
 <section id="soluciones" class="container" style="margin: 1rem auto 2rem;">
     <h2 class="section-title fade-up">Soluciones integrales</h2>
     <div class="tech-stack fade-up">
-        <span class="tech-item"><i class="fas fa-video"></i> Cámaras de seguridad</span>
-        <span class="tech-item"><i class="fas fa-satellite-dish"></i> Starlink instalación completa</span>
-        <span class="tech-item"><i class="fas fa-file-invoice"></i> Cotizaciones automatizadas</span>
-        <span class="tech-item"><i class="fas fa-microchip"></i> Electrónica domiciliaria</span>
-        <span class="tech-item"><i class="fas fa-cloud"></i> Sistemas 24/7 en la nube</span>
+        <span class="tech-item"><i class="fas fa-video"></i> Cámaras seguridad</span>
+        <span class="tech-item"><i class="fas fa-satellite-dish"></i> Instalación Starlink</span>
+        <span class="tech-item"><i class="fas fa-file-invoice"></i> Cotizaciones automáticas</span>
+        <span class="tech-item"><i class="fas fa-microchip"></i> Electrónica</span>
+        <span class="tech-item"><i class="fas fa-cloud"></i> Sistemas en la nube</span>
         <span class="tech-item"><i class="fas fa-chart-simple"></i> Estadísticas a medida</span>
     </div>
-    <div class="fade-up" style="background: linear-gradient(115deg, #fafcff, #ffffff); border-radius: 1.8rem; padding: 1.5rem; text-align: center; margin-top: 1rem; border:1px solid #eef2ff;">
-        <p><strong>🔧 ¿Buscas algo a medida?</strong> Desarrollamos cualquier sistema: control de inventarios, gestión de restaurantes, asistencias, estadísticas en tiempo real y más.</p>
+    <div class="fade-up" style="background: var(--white); border-radius: 1.2rem; padding: 1.2rem; text-align: center; border: 1px solid var(--gray-200); margin-top: 1rem;">
+        <p><strong>¿Buscas una solución a medida?</strong> Desarrollamos cualquier sistema que tu negocio necesite: inventarios, restaurantes, asistencias, inteligencia de negocios y más.</p>
     </div>
 </section>
 
 <footer>
-    <p>© 2025 GC-Company · Creadores de FINKI, Wallet Giko, NOVA y TOKTOK · Innovación sin límites</p>
-    <p style="margin-top: 0.5rem;"><i class="fas fa-envelope"></i> hello@gccompany.com  |  <i class="fab fa-whatsapp"></i> +57 310 000 0000</p>
+    <p>© 2025 GC-Company · Creadores de FINKI, Wallet Giko, NOVA y TOKTOK</p>
+    <p style="margin-top: 0.5rem;"><i class="fas fa-envelope"></i> romelgc766@gmail.com  |  <i class="fab fa-whatsapp"></i> +591 62315600</p>
 </footer>
 
 <div id="modalSolicitar" class="modal-overlay">
     <div class="modal-container">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-            <h3 style="font-size: 1.4rem; font-weight: 700;">Solicitar servicio</h3>
+            <h3 style="font-size: 1.3rem;">Solicitar cotización</h3>
             <button class="close-modal" id="closeModalBtn" style="font-size: 1.8rem; background: none; border: none; cursor: pointer;">&times;</button>
         </div>
         <form id="solicitudForm">
-            <div class="form-group"><label>Nombre completo *</label><input type="text" id="nombre" required placeholder="Ej: Carlos Gómez"></div>
-            <div class="form-group"><label>Celular *</label><input type="tel" id="telefono" required placeholder="+57 300 0000000"></div>
-            <div class="form-group"><label>Ubicación (Ciudad/País) *</label><input type="text" id="ubicacion" required placeholder="Bogotá, Colombia"></div>
+            <div class="form-group"><label>Nombre completo *</label><input type="text" id="nombre" required></div>
+            <div class="form-group"><label>Celular *</label><input type="tel" id="telefono" required></div>
+            <div class="form-group"><label>Ubicación *</label><input type="text" id="ubicacion" required></div>
             <div class="form-group"><label>Tipo de servicio</label>
                 <select id="tipoServicio" required>
-                    <option>Desarrollo web a medida</option><option>Sistema empresarial / ERP</option><option>Tienda online</option>
+                    <option>Desarrollo web</option><option>Sistema empresarial</option><option>Tienda online</option>
                     <option>Marketing / Diseño</option><option>Cámaras / Seguridad</option><option>Instalación Starlink</option>
-                    <option>Soluciones a medida</option>
+                    <option>Otro</option>
                 </select>
             </div>
-            <div class="form-group"><label>Detalles del proyecto *</label><textarea id="descripcion" rows="3" required placeholder="Cuéntanos qué necesitas..."></textarea></div>
-            <button type="submit" class="btn-submit" id="submitBtn"><i class="fab fa-telegram"></i> Enviar solicitud</button>
+            <div class="form-group"><label>Detalles del proyecto *</label><textarea id="descripcion" rows="3" required></textarea></div>
+            <button type="submit" class="btn-submit"><i class="fab fa-telegram"></i> Enviar solicitud</button>
         </form>
-        <p style="font-size: 0.65rem; text-align: center; margin-top: 0.8rem; color:#6c757d;">Los datos se envían directamente a nuestro equipo</p>
+        <p style="font-size: 0.65rem; text-align: center; margin-top: 0.8rem;">Le responderemos a la brevedad</p>
     </div>
 </div>
 <div id="toastMsg" class="toast-msg">✅ Solicitud enviada</div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-    // ---------- CONFIGURACIÓN TELEGRAM (REEMPLAZAR PARA PRODUCCIÓN) ----------
+    // Configuración de contacto (correo y teléfono actualizados en footer)
+    // Los datos se pueden enviar a Telegram, pero se mantiene la estructura demo.
     const TELEGRAM_BOT_TOKEN = "AQUI_TU_TOKEN_DE_BOT";
     const TELEGRAM_CHAT_ID = "AQUI_TU_CHAT_ID";
-    // --------------------------------------------------------------------
 
-    // Intersection Observer mejorado
+    // Animaciones
     const fades = document.querySelectorAll('.fade-up');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -768,10 +689,10 @@
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+    }, { threshold: 0.1 });
     fades.forEach(el => observer.observe(el));
 
-    // Mobile menu toggle
+    // Menú mobile
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
     menuToggle.addEventListener('click', () => {
@@ -787,7 +708,7 @@
         });
     });
 
-    // Modal logic
+    // Modal
     const modal = document.getElementById('modalSolicitar');
     const openBtns = document.querySelectorAll('#hero-solicitar-btn, #nav-solicitar-btn');
     const closeBtn = document.getElementById('closeModalBtn');
@@ -802,13 +723,12 @@
 
     async function sendToTelegram(data) {
         if (!TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN === "AQUI_TU_TOKEN_DE_BOT" || !TELEGRAM_CHAT_ID || TELEGRAM_CHAT_ID === "AQUI_TU_CHAT_ID") {
-            console.warn("Configura el bot y chat ID en el código para activar Telegram.");
-            showToast("⚠️ Demo: solicitud guardada (modo desarrollo)", true);
+            console.warn("Demo: sin integración Telegram");
             return false;
         }
-        const message = `🆕 *GC-COMPANY - Nueva solicitud* 🆕\n\n👤 *Nombre:* ${data.nombre}\n📞 *Teléfono:* ${data.telefono}\n📍 *Ubicación:* ${data.ubicacion}\n🛠 *Servicio:* ${data.tipoServicio}\n📝 *Descripción:* ${data.descripcion}\n\n🌐 Enviado desde landing oficial.`;
+        const message = `🆕 GC-Company - Nueva solicitud\n\n👤 Nombre: ${data.nombre}\n📞 Teléfono: ${data.telefono}\n📍 Ubicación: ${data.ubicacion}\n🛠 Servicio: ${data.tipoServicio}\n📝 Descripción: ${data.descripcion}`;
         const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-        const params = { chat_id: TELEGRAM_CHAT_ID, text: message, parse_mode: 'Markdown' };
+        const params = { chat_id: TELEGRAM_CHAT_ID, text: message };
         try {
             const resp = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(params) });
             const json = await resp.json();
@@ -818,9 +738,9 @@
 
     function showToast(msg, isError=false) {
         toast.textContent = msg;
-        toast.style.background = isError ? '#b91c1c' : '#0a0a0a';
+        toast.style.background = isError ? '#b91c1c' : '#1e4a76';
         toast.style.opacity = '1';
-        setTimeout(() => toast.style.opacity = '0', 3800);
+        setTimeout(() => toast.style.opacity = '0', 3500);
     }
 
     form.addEventListener('submit', async (e) => {
@@ -831,7 +751,7 @@
         const tipoServicio = document.getElementById('tipoServicio').value;
         const descripcion = document.getElementById('descripcion').value.trim();
         if(!nombre || !telefono || !ubicacion || !descripcion) {
-            showToast("❌ Completa todos los campos requeridos", true);
+            showToast("❌ Complete todos los campos", true);
             return;
         }
         const btn = document.getElementById('submitBtn');
@@ -840,32 +760,27 @@
         btn.disabled = true;
         const success = await sendToTelegram({ nombre, telefono, ubicacion, tipoServicio, descripcion });
         if(success) {
-            showToast("✅ Solicitud enviada con éxito. ¡Te contactaremos!");
-            form.reset();
-            closeModal();
-        } else if (TELEGRAM_BOT_TOKEN === "AQUI_TU_TOKEN_DE_BOT") {
-            showToast("✅ Demo: solicitud recibida (integra Telegram activable)", false);
+            showToast("✅ Solicitud enviada, le contactaremos pronto.");
             form.reset();
             closeModal();
         } else {
-            showToast("❌ Error al enviar. Inténtalo de nuevo.", true);
+            showToast("✅ Solicitud registrada (modo demostración)", false);
+            form.reset();
+            closeModal();
         }
         btn.innerHTML = originalText;
         btn.disabled = false;
     });
 
-    // Swiper mejorado (autoplay y navegación fluida)
+    // Swiper
     new Swiper('.mySwiper', {
         loop: true,
         slidesPerView: 1,
-        spaceBetween: 20,
-        autoplay: { delay: 3800, disableOnInteraction: false, pauseOnMouseEnter: true },
-        pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
+        spaceBetween: 16,
+        autoplay: { delay: 4000, disableOnInteraction: false },
+        pagination: { el: '.swiper-pagination', clickable: true },
         navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-        breakpoints: {
-            640: { slidesPerView: 2, spaceBetween: 20 },
-            1024: { slidesPerView: 3, spaceBetween: 28 }
-        }
+        breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
     });
 </script>
 </body>
